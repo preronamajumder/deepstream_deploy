@@ -1,4 +1,5 @@
 negative/
 positive/
+config.json
 googlenet_detector_fmg_v2_0.etlt_b1_gpu0_fp32.engine
 googlenet_detector_fmg_v2_0.etlt_b2_gpu0_fp32.engine
