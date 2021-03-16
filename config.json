@@ -1,0 +1,11 @@
+{   "source_type": "rtsp",
+    "source": 
+    {"stream_0": "rtsp://admin:123456@192.168.1.151:554/H264?ch=1&subtype=0&proto=Onvif"}, 
+    "display": true, 
+    "processing_width": 1280, 
+    "processing_height": 720, 
+    "tiler_width": 1280,
+    "tiler_height": 720,
+    "image_timer": 300, 
+    "queue_size": 20
+}

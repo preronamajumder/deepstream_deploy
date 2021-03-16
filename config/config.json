@@ -1,9 +1,0 @@
-{   "source_type": "rtsp",
-    "source": 
-    {"stream_0": "file:///home/dipesh/Downloads/vid35.mp4", "stream_1": "file:///home/dipesh/Downloads/vid36.mp4"}, 
-    "display": true, 
-    "processing_width": 640, 
-    "processing_height": 480, 
-    "image_timer": 10, 
-    "queue_size": 20
-}

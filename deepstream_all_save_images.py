@@ -49,11 +49,7 @@ from queue import Queue
 
 
 MUXER_BATCH_TIMEOUT_USEC=4000000
-TILED_OUTPUT_WIDTH=640*2
-TILED_OUTPUT_HEIGHT=480
 GST_CAPS_FEATURES_NVMM="memory:NVMM"
-OSD_PROCESS_MODE= 0
-OSD_DISPLAY_TEXT= 0
 
 #create image directories
 path1 = "positive"
@@ -253,6 +249,8 @@ def deepstream_main(config):
     display = config["display"]
     MUXER_OUTPUT_WIDTH = config["processing_width"]
     MUXER_OUTPUT_HEIGHT = config["processing_height"]
+    TILED_OUTPUT_WIDTH = config["tiler_width"]
+    TILED_OUTPUT_HEIGHT = config["tiler_height"]
     image_timer = config["image_timer"]
     for i in range(number_sources):
         #initialise id dictionary to keep track of object_id streamwise
@@ -390,9 +388,6 @@ def deepstream_main(config):
     nvosd = Gst.ElementFactory.make("nvdsosd", "onscreendisplay")
     if not nvosd:
         sys.stderr.write(" Unable to create nvosd \n")
-
-    # nvosd.set_property('process-mode',OSD_PROCESS_MODE)
-    # nvosd.set_property('display-text',OSD_DISPLAY_TEXT)
 
     if(is_aarch64()):
         print("Creating transform \n ")
@@ -535,7 +530,6 @@ def deepstream_main(config):
     if is_aarch64():
         pipeline.add(transform)
     pipeline.add(sink)
-
 
     streammux.link(queue1)
     queue1.link(pgie)
