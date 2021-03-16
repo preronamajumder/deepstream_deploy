@@ -1,6 +1,6 @@
 negative/
 positive/
-common
+common/
 googlenet_detector_fmgh_v1_1.etlt_b1_gpu0_fp32.engine
 googlenet_detector_fmgh_v1_1.etlt_b2_gpu0_fp32.engine
 googlenet_detector_fmgh_v1_1_pruned.etlt_b1_gpu0_fp32.engine
